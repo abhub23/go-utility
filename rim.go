@@ -1,5 +1,11 @@
 package rim
 
+import (
+	"strings"
+)
+
 func Calc(name1 string, name2 string) string {
-	return name1 + " and " + name2
+	lower1 := strings.ToLower(name1)
+	lower2 := strings.ToLower(name2)
+	return lower1 + " Flames " + lower2
 }
