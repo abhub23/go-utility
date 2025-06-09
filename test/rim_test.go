@@ -1,9 +1,8 @@
 package rim
 
 import (
-	
-	"testing"
 	"github.com/abhub23/go-utility/rim"
+	"testing"
 )
 
 func TestFlames(t *testing.T) {
@@ -11,8 +10,8 @@ func TestFlames(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error occured %v", err)
 	}
-	
-	want := "Javascript and Typescript have a relation of Affection"
+
+	want := "javascript and typescript have a relation of Affection"
 
 	if got != want {
 		t.Errorf("Flames(Abdullah, Rimsha) got %s and want %s", got, want)

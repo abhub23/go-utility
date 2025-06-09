@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	resp, err := rim.Flames("Javascript", "Typescript")
+	resp, err := rim.Flames("abdullah", "rimsha")
 	if err != nil {
 		fmt.Printf("error occured %v\n", err)
 	}
