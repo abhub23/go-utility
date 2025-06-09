@@ -13,7 +13,7 @@ func Findrelation(total int, flames []rune) string {
 	var relation string
 
 	for flamesCount >= 2 {
-		remove := (start + 8 - 1) % flamesCount
+		remove := (start + total - 1) % flamesCount
 
 		for _, val := range flames {
 			if val != flames[remove] {
@@ -27,7 +27,6 @@ func Findrelation(total int, flames []rune) string {
 	}
 
 	key := flames[0]
-	fmt.Println(string(flames))
 
 	RelationshipMap := make(map[rune]string)
 
