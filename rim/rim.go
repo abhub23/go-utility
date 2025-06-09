@@ -6,6 +6,42 @@ import (
 	"strings"
 )
 
+func Findrelation(total int, flames []rune) string {
+
+	flamesCount := len(flames)
+	start := 0
+	var relation string
+
+	for flamesCount >= 2 {
+		remove := (start + 8 - 1) % flamesCount
+
+		for _, val := range flames {
+			if val != flames[remove] {
+				flames = append(flames[:remove], flames[remove+1:]...)
+				break
+			}
+
+		}
+		start = remove
+		flamesCount--
+	}
+
+	key := flames[0]
+	fmt.Println(string(flames))
+
+	RelationshipMap := make(map[rune]string)
+
+	RelationshipMap['F'] = "Friends"
+	RelationshipMap['L'] = "Lovers"
+	RelationshipMap['A'] = "Affection"
+	RelationshipMap['M'] = "Marriage"
+	RelationshipMap['E'] = "Enemies"
+	RelationshipMap['S'] = "Siblings"
+
+	relation = RelationshipMap[key]
+
+	return relation
+}
 
 func Flames(name1, name2 string) (string, error) {
 
@@ -36,11 +72,9 @@ func Flames(name1, name2 string) (string, error) {
 	}
 
 	total := len(slice1) + len(slice2)
-    flames := []rune{'F','L','A','M','E','S'}
-    
-    relation := Findrelation(total, flames)
+	flames := []rune{'F', 'L', 'A', 'M', 'E', 'S'}
 
-
+	relation := Findrelation(total, flames)
 
 	return fmt.Sprintf("%s and %s have a relation of %s", name1, name2, relation), nil
 
