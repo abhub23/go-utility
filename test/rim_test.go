@@ -16,6 +16,7 @@ func TestFlames(t *testing.T) {
 	tests := []Tests{
 		{"Javascript and Typescript", "Javascript", "Typescript", "javascript and typescript have a relation of Affection"},
 		{"Go and Rust", "Go", "Rust", "go and rust have a relation of Marriage"},
+		{"Harkirat and Solana", "Harkirat", "Solana", "harkirat and solana have a relation of Lovers"},
 	}
 
 	for _, el := range tests {
